@@ -1,0 +1,3 @@
+[submodule "notebook/handson-ml3"]
+	path = notebook/handson-ml3
+	url = https://github.com/ageron/handson-ml3.git
