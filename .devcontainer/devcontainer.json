@@ -2,13 +2,13 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
 	"build": {
-		"dockerfile": "./Containerfile",
-		"context": ".",
 		"args": {
-			"USERNAME": "${localEnv:USER:data_science}",
+			"USER_GID": "${localEnv:GID:1000}",
 			"USER_UID": "${localEnv:UID:1000}",
-			"USER_GID": "${localEnv:GID:1000}"
-		}
+			"USERNAME": "${localEnv:USER:data_science}"
+		},
+		"context": ".",
+		"dockerfile": "./Containerfile"
 	},
 	"customizations": {
 		"vscode": {
@@ -45,8 +45,6 @@
 			}
 		}
 	},
-	"name": "Python 3",
-	"remoteUser": "${localEnv:USER:data_science}",
 	"mounts": [
 		"source=${localWorkspaceFolder}/.devcontainer/home/.zshenv,target=/home/${localEnv:USER:data_science}/.zshenv,type=bind,consistency=cached",
 		"source=${localWorkspaceFolder}/.devcontainer/home/.config/mise,target=/home/${localEnv:USER:data_science}/.config/mise,type=bind,consistency=cached",
@@ -54,6 +52,8 @@
 		"source=${localWorkspaceFolder}/.devcontainer/home/.config/uv,target=/home/${localEnv:USER:data_science}/.config/uv,type=bind,consistency=cached",
 		"source=${localWorkspaceFolder}/.devcontainer/home/.config/zsh,target=/home/${localEnv:USER:data_science}/.config/zsh,type=bind,consistency=cached"
 	],
+	"name": "Data Science",
+	"remoteUser": "${localEnv:USER:data_science}",
 	"workspaceFolder": "/workspace",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
 }
