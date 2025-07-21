@@ -1,5 +1,0 @@
-# UV configuration - XDG compliant
-# This file will be copied to $XDG_CONFIG_HOME/uv/uv.toml
-
-[tool.uv]
-cache-dir = { env = "XDG_CACHE_HOME", default = "~/.cache" }

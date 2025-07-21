@@ -22,7 +22,7 @@ USER $USERNAME
 
 # Install from mise config file
 RUN mkdir -p $HOME/.config/mise
-COPY .file/.config/mise/config.toml $HOME/.config/mise/config.toml
+COPY .config/mise/config.toml $HOME/.config/mise/config.toml
 RUN mise trust && \
     mise install
 
