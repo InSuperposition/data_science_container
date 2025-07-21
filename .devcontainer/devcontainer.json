@@ -1,9 +1,14 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"containerEnv": {
-		// Configure UV cache to be on the same filesystem as project to enable hardlinks
-		"UV_CACHE_DIR": "/workspaces/data_science_container/.uv-cache"
+	"build": {
+		"dockerfile": "./Containerfile",
+		"context": ".",
+		"args": {
+			"USERNAME": "${localEnv:USER:data_science}",
+			"USER_UID": "${localEnv:UID:1000}",
+			"USER_GID": "${localEnv:GID:1000}"
+		}
 	},
 	"customizations": {
 		"vscode": {
@@ -40,15 +45,13 @@
 			}
 		}
 	},
-	"features": {
-		"ghcr.io/va-h/devcontainers-features/uv:1": {
-			"shellautocompletion": true,
-			"version": "latest"
-		},
-		"ghcr.io/devcontainer-community/devcontainer-features/starship.rs:1": {
-			"version": "latest"
-		}
-	},
-	"image": "mcr.microsoft.com/devcontainers/python:1-3.11-bookworm",
-	"name": "Python 3"
+	"name": "Python 3",
+	"remoteUser": "${localEnv:USER:data_science}",
+	"mounts": [
+		"source=${localWorkspaceFolder}/.devcontainer/.file/.zshenv,target=/home/${localEnv:USER:data_science}/.zshenv,type=bind,consistency=cached",
+		"source=${localWorkspaceFolder}/.devcontainer/.file/.config/mise,target=/home/${localEnv:USER:data_science}/.config/mise,type=bind,consistency=cached",
+		"source=${localWorkspaceFolder}/.devcontainer/.file/.config/starship,target=/home/${localEnv:USER:data_science}/.config/starship,type=bind,consistency=cached",
+		"source=${localWorkspaceFolder}/.devcontainer/.file/.config/uv,target=/home/${localEnv:USER:data_science}/.config/uv,type=bind,consistency=cached",
+		"source=${localWorkspaceFolder}/.devcontainer/.file/.config/zsh,target=/home/${localEnv:USER:data_science}/.config/zsh,type=bind,consistency=cached"
+	]
 }

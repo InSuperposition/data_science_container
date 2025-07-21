@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "WebFetch(domain:wiki.archlinux.org)",
+      "Bash(find:*)",
+      "WebFetch(domain:containers.dev)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:mise.jdx.dev)",
+      "WebFetch(domain:code.visualstudio.com)"
+    ],
+    "deny": []
+  }
+}

@@ -1,0 +1,30 @@
+# Use the official Arch Linux base image
+FROM archlinux:latest
+
+# Update system and install base dependencies
+RUN pacman -Syu --noconfirm && \
+    pacman -S --noconfirm base-devel git curl mise python-uv starship sudo zsh xdg-user-dirs && \
+    rm -rf /var/cache/pacman/pkg/*
+
+# Create a non-root user for development
+ARG USERNAME=data_science
+ARG USER_UID=1000
+ARG USER_GID=1000
+
+RUN groupadd --gid $USER_GID $USERNAME && \
+    useradd --uid $USER_UID --gid $USER_GID -m $USERNAME && \
+    echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/$USERNAME && \
+    chmod 0440 /etc/sudoers.d/$USERNAME && \
+    chsh -s /bin/zsh $USERNAME
+
+# Switch to the non-root user
+USER $USERNAME
+
+# Install from mise config file
+RUN mkdir -p $HOME/.config/mise
+COPY .file/.config/mise/config.toml $HOME/.config/mise/config.toml
+RUN mise trust && \
+    mise install
+
+# Default commandw
+CMD ["/bin/zsh"]
