@@ -1,2 +1,2 @@
 #!/bin/sh
-export UV_CACHE_DIR="${HOME}/.cache/uv"
+export UV_CACHE_DIR="/workspace/.cache/uv"
