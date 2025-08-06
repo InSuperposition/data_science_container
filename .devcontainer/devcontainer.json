@@ -13,6 +13,7 @@
 			"extensions": [
 				"charliermarsh.ruff",
 				"-dbaeumer.vscode-eslint",
+				"github.copilot-chat",
 				"github.vscode-pull-request-github",
 				"gxl.git-graph-3",
 				"-ms-python.autopep8",
@@ -22,8 +23,8 @@
 				"ms-toolsai.jupyter",
 				"ms-toolsai.python-ds-extension-pack",
 				"ms-toolsai.vscode-jupyter-powertoys",
-				"ms-windows-ai-studio.windows-ai-studio",
-				"tamasfe.even-better-toml"
+				"tamasfe.even-better-toml",
+				"usernamehw.errorlens"
 			],
 			"settings": {
 				"[python]": {
@@ -49,7 +50,9 @@
 		"source=${localWorkspaceFolder}/.devcontainer/home/.config/mise,target=/home/${localEnv:USER:data_science}/.config/mise,type=bind,consistency=cached",
 		"source=${localWorkspaceFolder}/.devcontainer/home/.config/starship,target=/home/${localEnv:USER:data_science}/.config/starship,type=bind,consistency=cached",
 		"source=${localWorkspaceFolder}/.devcontainer/home/.config/uv,target=/home/${localEnv:USER:data_science}/.config/uv,type=bind,consistency=cached",
-		"source=${localWorkspaceFolder}/.devcontainer/home/.config/zsh,target=/home/${localEnv:USER:data_science}/.config/zsh,type=bind,consistency=cached"
+		"source=${localWorkspaceFolder}/.devcontainer/home/.config/zsh,target=/home/${localEnv:USER:data_science}/.config/zsh,type=bind,consistency=cached",
+		"type=volume,target=/workspace/.venv",
+		"type=volume,target=/workspace/.cache"
 	],
 	"name": "Data Science",
 	"remoteUser": "${localEnv:USER:data_science}",

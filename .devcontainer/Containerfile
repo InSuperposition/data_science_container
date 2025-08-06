@@ -26,5 +26,14 @@ COPY home/.config/mise/config.toml $HOME/.config/mise/config.toml
 RUN mise trust && \
     mise install
 
+# Create workspace directories for volume mounts
+RUN sudo mkdir -p /workspace/.venv /workspace/.cache && \
+    sudo chown $USERNAME:$USERNAME /workspace/.venv /workspace/.cache
+
+# Set environment variables for Python virtual environment and cache
+ENV UV_PROJECT_ENVIRONMENT=/workspace/.venv
+ENV PYTHONPYCACHEPREFIX=/workspace/.cache/pycache
+ENV XDG_CACHE_HOME=/workspace/.cache
+
 # Default command
 CMD ["/bin/zsh"]
