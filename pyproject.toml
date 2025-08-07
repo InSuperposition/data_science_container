@@ -1,11 +1,20 @@
 [project]
-name = "workspace"
+name = "data-science"
 version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = [
     "ipykernel>=6.30.0",
     "matplotlib>=3.10.3",
+    "nbstripout-fast>=1.1.1",
     "pandas>=2.3.1",
     "pgeocode>=0.5.0",
     "scikit-learn>=1.7.1",
 ]
+[dependency-groups]
+dev = ["nbstripout-fast>=0.1.0"]
+
+[project.scripts]
+nbstripout = "nbstripout_fast.cli:main"
+
+[tool.uv]
+dev-dependencies = ["nbstripout-fast>=0.1.0"]

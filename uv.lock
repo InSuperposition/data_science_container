@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.11"
 resolution-markers = [
     "python_full_version >= '3.12'",
@@ -209,6 +209,37 @@ sdist = { url = "https://files.pythonhosted.org/packages/a9/95/a3dbbb5028f35eafb
 wheels = [
     { url = "https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl", hash = "sha256:85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30", size = 8321, upload-time = "2023-10-07T05:32:16.783Z" },
 ]
+
+[[package]]
+name = "data-science"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "ipykernel" },
+    { name = "matplotlib" },
+    { name = "nbstripout-fast" },
+    { name = "pandas" },
+    { name = "pgeocode" },
+    { name = "scikit-learn" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "nbstripout-fast" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "ipykernel", specifier = ">=6.30.0" },
+    { name = "matplotlib", specifier = ">=3.10.3" },
+    { name = "nbstripout-fast", specifier = ">=1.1.1" },
+    { name = "pandas", specifier = ">=2.3.1" },
+    { name = "pgeocode", specifier = ">=0.5.0" },
+    { name = "scikit-learn", specifier = ">=1.7.1" },
+]
+
+[package.metadata.requires-dev]
+dev = [{ name = "nbstripout-fast", specifier = ">=0.1.0" }]
 
 [[package]]
 name = "debugpy"
@@ -519,6 +550,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/99/5b/a36a337438a14116b16480db471ad061c36c3694df7c2084a0da7ba538b7/matplotlib_inline-0.1.7.tar.gz", hash = "sha256:8423b23ec666be3d16e16b60bdd8ac4e86e840ebd1dd11a30b9f117f2fa0ab90", size = 8159, upload-time = "2024-04-15T13:44:44.803Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8f/8e/9ad090d3553c280a8060fbf6e24dc1c0c29704ee7d1c372f0c174aa59285/matplotlib_inline-0.1.7-py3-none-any.whl", hash = "sha256:df192d39a4ff8f21b1895d72e6a13f5fcc5099f00fa84384e0ea28c2cc0653ca", size = 9899, upload-time = "2024-04-15T13:44:43.265Z" },
+]
+
+[[package]]
+name = "nbstripout-fast"
+version = "1.1.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d8/14/54aa0d3849747ce59650455f328dc471f3fefa0aa901cf3f6a859e54faf8/nbstripout_fast-1.1.1.tar.gz", hash = "sha256:54cb455ab1326fa99d446f4c92f8359fa5f31351b02a6e286caf81334fa8266c", size = 28628, upload-time = "2025-07-25T23:14:38.342Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7e/ed/5efa29427668e665ca00b98d521669e30f08f1b1f23dd9c777b604532342/nbstripout_fast-1.1.1-py3-none-macosx_11_0_arm64.whl", hash = "sha256:8c8cd2a2446e1334b107ba9b65e8e4e0f74380b1884e5e96bf0d06e0e5cdb21d", size = 1224736, upload-time = "2025-07-25T23:14:27.469Z" },
+    { url = "https://files.pythonhosted.org/packages/e5/e0/a460719c0ed8a18c897300fea0154db00e510000a118b5d898cffbe2028e/nbstripout_fast-1.1.1-py3-none-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:eba123f9b1799a49666fad9c0efd46bef4bc7f709e47a8ca0685ad335f903fc0", size = 1436332, upload-time = "2025-07-25T23:14:29.38Z" },
+    { url = "https://files.pythonhosted.org/packages/2b/0b/ed28a5942b0616331f0fa3edf8452b411e0e78f6c947d9bc80753dd12c98/nbstripout_fast-1.1.1-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5b89f7c5b36a8e95d54a72021ec327d6517424bc5ac588f17d327966a9b46701", size = 1399095, upload-time = "2025-07-25T23:14:30.849Z" },
+    { url = "https://files.pythonhosted.org/packages/04/16/511ea327bc216750abb5a3a8b620ba79873e92593f55ac3acffbfe3cea69/nbstripout_fast-1.1.1-py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:23cfa4450e93ec0dd553b37f6cce3c51f7877b636865fd44a3c828f8589e68f9", size = 1450173, upload-time = "2025-07-25T23:14:33.121Z" },
+    { url = "https://files.pythonhosted.org/packages/83/5e/e5d7ddfae1779723815aea0fb45536679369268686839471b39026aaadab/nbstripout_fast-1.1.1-py3-none-win32.whl", hash = "sha256:d960cf9c1daaf2d981bbc7457076ec05d3cddfa122297bc09deab628b9b70b75", size = 1009612, upload-time = "2025-07-25T23:14:34.708Z" },
+    { url = "https://files.pythonhosted.org/packages/3d/aa/26889da6e5381cbe17709f3392e153585c1fcf5af3f96d7cf81ca9acafc0/nbstripout_fast-1.1.1-py3-none-win_amd64.whl", hash = "sha256:d2b79eeef8a3859db76f009bd2be066c0046d8b68b48e908d5e295b4f2c1d2c2", size = 1082626, upload-time = "2025-07-25T23:14:36.717Z" },
 ]
 
 [[package]]
@@ -1113,25 +1158,4 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz", hash = "sha256:72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5", size = 101301, upload-time = "2024-01-06T02:10:57.829Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fd/84/fd2ba7aafacbad3c4201d395674fc6348826569da3c0937e75505ead3528/wcwidth-0.2.13-py2.py3-none-any.whl", hash = "sha256:3da69048e4540d84af32131829ff948f1e022c1c6bdb8d6102117aac784f6859", size = 34166, upload-time = "2024-01-06T02:10:55.763Z" },
-]
-
-[[package]]
-name = "workspace"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "ipykernel" },
-    { name = "matplotlib" },
-    { name = "pandas" },
-    { name = "pgeocode" },
-    { name = "scikit-learn" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "ipykernel", specifier = ">=6.30.0" },
-    { name = "matplotlib", specifier = ">=3.10.3" },
-    { name = "pandas", specifier = ">=2.3.1" },
-    { name = "pgeocode", specifier = ">=0.5.0" },
-    { name = "scikit-learn", specifier = ">=1.7.1" },
 ]
