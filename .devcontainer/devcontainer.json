@@ -20,6 +20,7 @@
 				"mechatroner.rainbow-csv",
 				"ms-python.debugpy",
 				"ms-python.vscode-pylance",
+				"ms-toolsai.datawrangler",
 				"ms-toolsai.jupyter",
 				"ms-toolsai.python-ds-extension-pack",
 				"ms-toolsai.vscode-jupyter-powertoys",
