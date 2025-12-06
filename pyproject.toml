@@ -10,12 +10,36 @@ dependencies = [
     "pgeocode>=0.5.0",
     "scikit-learn>=1.7.1",
     "seaborn>=0.13.2",
+    "torch>=2.9.1",
+    "torchinfo>=1.8.0",
+    "torchview>=0.2.7",
+    "torchvision>=0.24.1",
 ]
 [dependency-groups]
-dev = ["nbstripout-fast>=0.1.0"]
+dev = ["nbstripout-fast>=0.1.0", "ruff>=0.14.8"]
 
 [project.scripts]
 nbstripout = "nbstripout_fast.cli:main"
+lint = "ruff check ."
+format = "ruff format ."
+fix = "ruff check --fix . && ruff format ."
 
-[tool.uv]
-dev-dependencies = ["nbstripout-fast>=0.1.0"]
+[tool.ruff]
+target-version = "py310" # adjust to your minimum Python
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "W",  # pycodestyle
+    "F",  # Pyflakes
+    "I",  # isort
+    "B",  # bugbear
+    "UP", # pyupgrade
+    "PL", # pylint (optional)
+]
+ignore = ["E501"] # optional: let black/ruff format handle line length instead
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
