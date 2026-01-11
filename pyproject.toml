@@ -5,6 +5,7 @@ requires-python = ">=3.11"
 dependencies = [
     "google-genai>=1.55.0",
     "ipykernel>=6.30.0",
+    "kagglehub>=0.4.0",
     "langchain-google-genai>=4.0.0",
     "matplotlib>=3.10.3",
     "nbstripout-fast>=1.1.1",
