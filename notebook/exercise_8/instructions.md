@@ -13,7 +13,7 @@ In this homework, you will **extend and complete the investigation**.
 **Part 1 — Baselines (reproducible experiments)**
 
 Using the provided CNNM architecture:  
-**1\.** 
+**1\.**
 
 **Train CNNM on MNIST**
 
@@ -41,7 +41,7 @@ Now we will investigate whether we can improve performance on MNIST-A.
 * Start from random initialization.  
 * Train until reasonable MNIST performance is reached.
 
-**4\.  Create two copies of the trained model**    
+**4\.  Create two copies of the trained model**
 ***Experiment A — No freezing***
 
 * Continue training the model on **MNIST-A**  
@@ -56,7 +56,7 @@ Answer:
 
 ***Experiment B — Freeze feature extractor***
 
-* Freeze all layers **except the final fully connected layers.**    
+* Freeze all layers **except the final fully connected layers.**
 * Retrain on MNIST-A.  
 * Track performance over time.
 
@@ -116,7 +116,7 @@ and compare its behavior to the custom CNNM.
 
 **Notes:**
 
-* ResNet expects 
+* ResNet expects
 
   **3-channel images** .  
 * ResNet typically expects larger images (e.g. 224×224), but reasonable resizing is sufficient.  
@@ -182,7 +182,7 @@ Briefly explain:
 
 Notes
 
-* This is an 
+* This is an
 
   **advanced / bonus** task.  
 * Partial completion is fine.  
