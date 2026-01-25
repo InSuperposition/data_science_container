@@ -8,7 +8,6 @@ dependencies = [
     "kagglehub>=0.4.0",
     "langchain-google-genai>=4.0.0",
     "matplotlib>=3.10.3",
-    "nbstripout-fast>=1.1.1",
     "pandas>=2.3.1",
     "pgeocode>=0.5.0",
     "python-dotenv>=1.2.1",
@@ -20,7 +19,7 @@ dependencies = [
     "torchvision>=0.24.1",
 ]
 [dependency-groups]
-dev = ["nbstripout-fast>=0.1.0", "ruff>=0.14.8"]
+dev = ["nbstripout-fast>=1.1.1", "ruff>=0.14.8"]
 
 [project.scripts]
 nbstripout = "nbstripout_fast.cli:main"
