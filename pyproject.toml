@@ -1,7 +1,7 @@
 [project]
 name = "data-science"
 version = "0.1.0"
-requires-python = ">=3.11"
+requires-python = ">=3.14"
 dependencies = [
     "google-genai>=1.55.0",
     "ipykernel>=6.30.0",
@@ -28,7 +28,7 @@ format = "ruff format ."
 fix = "ruff check --fix . && ruff format ."
 
 [tool.ruff]
-target-version = "py310" # adjust to your minimum Python
+target-version = "py314" # adjust to your minimum Python
 line-length = 100
 
 [tool.ruff.lint]
