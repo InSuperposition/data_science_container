@@ -4,6 +4,7 @@ version = "0.1.0"
 requires-python = ">=3.14"
 dependencies = [
     "google-genai>=1.55.0",
+    "huggingface-hub>=1.4.1",
     "ipykernel>=6.30.0",
     "kagglehub>=0.4.0",
     "langchain-google-genai>=4.0.0",
@@ -11,12 +12,14 @@ dependencies = [
     "pandas>=2.3.1",
     "pgeocode>=0.5.0",
     "python-dotenv>=1.2.1",
+    "qdrant-client>=1.16.2",
     "scikit-learn>=1.7.1",
     "seaborn>=0.13.2",
     "torch>=2.9.1",
     "torchinfo>=1.8.0",
     "torchview>=0.2.7",
     "torchvision>=0.24.1",
+    "transformers>=5.1.0",
 ]
 [dependency-groups]
 dev = ["nbstripout-fast>=1.1.1", "ruff>=0.14.8"]
